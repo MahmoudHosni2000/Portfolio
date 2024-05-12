@@ -25,8 +25,8 @@
 
 #### Mobile Version
 ![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Home-mobile.png)
-![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/About-mobile.png)
-![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Projects-mobile.png)
+![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/cJhgdfxZ/Whats-App-Image-2024-05-12-at-10-53-50-8024b1b9.jpg)
+![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/wvBtM3MN/Whats-App-Image-2024-05-12-at-10-53-50-78a66a47.jpg)
 ![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Contact-mobile.png)
 
 ## Resources Used in This Project
@@ -40,12 +40,6 @@
 #### AI Images
 
 - Created with the help of [Playground AI](https://playgroundai.com/)
-
-#### Github Stats & Details
-
-- [Github ReadMe Stats](https://github.com/anuraghazra/github-readme-stats)
-- [Skills Icons](https://github.com/tandpfun/skill-icons)
-- [Github Readme Streak Stats](https://github.com/denvercoder1/github-readme-streak-stats)
 
 #### Development Resources
 
