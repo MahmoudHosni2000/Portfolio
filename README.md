@@ -24,10 +24,10 @@
 ![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Contact-desktop.png)
 
 #### Mobile Version
-![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Home-mobile.png)
+![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/t4SYsWZz/Whats-App-Image-2024-05-12-at-11-02-35-bc91c47d.jpg)
 ![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/cJhgdfxZ/Whats-App-Image-2024-05-12-at-10-53-50-8024b1b9.jpg)
 ![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/wvBtM3MN/Whats-App-Image-2024-05-12-at-10-53-50-78a66a47.jpg)
-![Next.js Creative Portfolio Website Contact Page](https://github.com/codebucks27/Nextjs-Creative-Portfolio-Starter-Code-Files/blob/main/website%20images/Contact-mobile.png)
+![Next.js Creative Portfolio Website Contact Page](https://i.postimg.cc/qvMNBjRR/Whats-App-Image-2024-05-12-at-11-02-35-c972f72d.jpg)
 
 ## Resources Used in This Project
 
