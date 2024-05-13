@@ -1,70 +1,80 @@
 "use client";
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
-import { Toaster, toast } from 'sonner'
-import { motion } from 'framer-motion';
+import React from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import { Toaster, toast } from "sonner";
+import { motion } from "framer-motion";
 
 const container = {
-  hidden: {
-      opacity:0
-  },
+  hidden: { opacity: 0 },
   show: {
-      opacity: 1,
-      transition: {
-          staggerChildren: 0.3,
-      }
-  }
-}
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
+    },
+  },
+};
 
 const item = {
   hidden: { scale: 0 },
-  show: { scale: 1 }
-}
-
+  show: { scale: 1 },
+};
 
 export default function Form() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const sendEmail = (e) => {
+  const sendEmail = (params) => {
+    const toastId = toast.loading("Sending your message, please wait...");
 
-    const toastId = toast.loading('Sending your message, please wait...')
-    emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID, 
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        e, {
-        publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-        limitRate:{
-          throttle: 5000, //user is not allowed to send more than 1 email per 5 seconds
+        params,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+          limitRate: {
+            throttle: 5000, // you can not send more then 1 email per 5 seconds
+          },
         }
-      })
+      )
       .then(
         () => {
-          toast.success("I've received your message, will get back to you soon...",{
-            id: toastId
-          }
+          toast.success(
+            "I have received your message, I will get back to you soon!",
+            {
+              id: toastId,
+            }
           );
         },
         (error) => {
-          toast.error('FAILED...', error.text,{
-            id: toastId
-          });
-        },
+          // console.log("FAILED...", error.text);
+          toast.error(
+            "There was an error sending your message, please try again later!",
+            {
+              id: toastId,
+            }
+          );
+        }
       );
   };
-  
+
   const onSubmit = (data) => {
     const templateParams = {
-      to_name: "Hosni",
+      to_name: "CodeBucks",
       from_name: data.name,
       reply_to: data.email,
       message: data.message,
-    }
+    };
 
-    sendEmail(templateParams)
+    sendEmail(templateParams);
   };
-  console.log(errors);
-  
+
   return (
     <>
       <Toaster richColors={true} />
