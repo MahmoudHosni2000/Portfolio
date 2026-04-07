@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { VolumeX, Volume2 } from 'lucide-react';
 
 export default function Sound() {
@@ -8,34 +8,35 @@ export default function Sound() {
   const [isPlaying, setIsPlaying] = useState();
   const [showPrompt, setShowPrompt] = useState();
 
+  const toggle = useCallback(() => {
+    const newState = !isPlaying;
+    setIsPlaying(newState);
+    newState ? audioRef.current.play() : audioRef.current.pause();
+    const expirationTime = Date.now() + 3 * 24 * 60 * 60 * 1000;
+    localStorage.setItem("musicConsent", JSON.stringify({ isPlaying: newState, expires: expirationTime }));
+  }, [isPlaying]);
+
   useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 32) { // keyCode 32 is for spacebar
+        toggle();
+      }
+    };
+
     window.addEventListener('keydown', handleKeyPress );
-}, [isPlaying]);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [toggle]);
 
-const handleKeyPress = (event) => {
-  if (event.keyCode === 32) { // keyCode 32 is for spacebar
-    toggle();
-  }
-}
-
-var expirationTime = Date.now() + 3 * 24 * 60 * 60 * 1000; // 3 days in milliseconds
   useEffect(() => {
     const musicConsent = JSON.parse(localStorage.getItem('musicConsent'));
     console.log(musicConsent?.expires);
     if (musicConsent !== null) {
       setShowPrompt(false)
-      setIsPlaying(musicConsent);
+      setIsPlaying(musicConsent.isPlaying);
     }else{
       setShowPrompt(true)
     }
   }, []);
-  
-  const toggle = () => {
-    const newState = !isPlaying;
-    setIsPlaying(newState);
-    newState ? audioRef.current.play() : audioRef.current.pause();
-    localStorage.setItem("musicConsent", JSON.stringify({ isPlaying: newState, expires: expirationTime })); //JSON.stringify or String()
-  }
 
   const handlePromptResponse = (response) => {
     setShowPrompt(false);
