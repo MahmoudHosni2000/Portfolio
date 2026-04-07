@@ -8,8 +8,8 @@ const NavLink = motion(Link);
 const HomeBtn = () => {
   return (
     <NavLink
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
       href={"/"}
       target={"_self"}
