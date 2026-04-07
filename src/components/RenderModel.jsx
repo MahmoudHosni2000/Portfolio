@@ -6,7 +6,7 @@ import React, { Suspense } from "react";
 
 export default function RenderModel({ children, className }) {
   return (
-    <Canvas className={clsx("w-screen h-10 -z-10 relative", className)}>
+    <Canvas className={clsx("w-full h-full -z-10", className)}>
       {/* clsx => is a utility function used for conditionally joining class names together. */}
       {/* fallback => specifies what should be rendered while the suspended components are loading. */}
       {/* Suspense => it will load 3D Model asynchronously */}

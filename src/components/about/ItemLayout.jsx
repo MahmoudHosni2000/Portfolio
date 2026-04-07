@@ -12,7 +12,7 @@ const ItemLayout = ({ children, className }) => {
       className={clsx(
         "custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8",
         className
-      )}Z
+      )}
     >
       {children}
     </motion.div>
