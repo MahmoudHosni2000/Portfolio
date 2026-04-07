@@ -25,15 +25,15 @@ export default function AboutDetails() {
                 </ItemLayout>
                 <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent'} >
                     <p className='font-semibold w-full text-left text-2xl sm:text-5xl'>
-                        1.5 <sub className='font-semibold text-base'>years of experience</sub>
+                        1½ <sub className='font-semibold text-base'>years of experience</sub>
                     </p>
                 </ItemLayout>
                 <ItemLayout className={"col-span-full"}>
                     <Image
+                        unoptimized
                         className="w-full h-auto"
-                        src={`https://skillicons.dev/icons?i=c,cs,cpp,bootstrap,css,firebase,git,github,html,js,linux,netlify,nextjs,nodejs,npm,react,redux,sass,tailwind,threejs,vercel,vscode`}
-                        alt="CodeBucks"
-                        loading="lazy"
+                        src="https://skillicons.dev/icons?i=c,cpp,cs,js,typescript,html,css,sass,bootstrap,tailwind,react,redux,threejs,nextjs,nodejs,npm,dotnet,prisma,supabase,firebase,postman,gulp,git,github,vercel,netlify,ai,vscode,arduino"
+                        alt="Skills icons"
                         width={800}
                         height={500}
                     />
