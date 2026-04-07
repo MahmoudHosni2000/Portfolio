@@ -13,7 +13,7 @@ export default function Home() {
       <Image
         src={bg}
         alt="bg-img"
-        className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
+        className="-z-50 fixed top-0 left-0 w-screen h-screen object-cover object-center opacity-50 pointer-events-none"
       />      
       </FireFliesBG>      
       <div className="w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-1/2 -translate-y-1/2 left-0 z-10 mx-auto">

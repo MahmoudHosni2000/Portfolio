@@ -11,7 +11,7 @@ export default function Contact() {
       <Image
         src={bg}
         alt="bg-img"
-        className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
+        className="-z-50 fixed top-0 left-0 w-screen h-screen object-cover object-center opacity-50 pointer-events-none"
       />      
       </FireFliesBG>     
       <article className="relative w-full flex flex-col items-center justify-center space-y-8">

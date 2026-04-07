@@ -14,8 +14,7 @@ export default function Home() {
         sizes="100vw"
         src={bg}
         alt="background-image"
-        fill
-        className="-z-50 w-full h-full object-cover object-center opacity-50"
+        className="-z-50 w-screen h-screen fixed top-0 left-0 object-cover object-center opacity-50 pointer-events-none"
       />
       </FireFliesBG>
 

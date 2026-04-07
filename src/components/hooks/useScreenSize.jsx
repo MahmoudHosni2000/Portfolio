@@ -11,22 +11,22 @@
 import { useEffect, useState } from "react";
 
 const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState(1024);
+  const [screenSize, setScreenSize] = useState();
 
   useEffect(() => {
-    // function getScreenSize() {
-    //   return window.innerWidth;
-    // }
+    function getScreenSize() {
+      return window.innerWidth;
+    }
 
-    // function handleResize() {
-    //   setScreenSize(getScreenSize());
-    // }
+    function handleResize() {
+      setScreenSize(getScreenSize());
+    }
 
-    // handleResize();
+    handleResize();
 
-    // window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-    // return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return screenSize;
