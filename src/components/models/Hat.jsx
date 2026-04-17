@@ -6,6 +6,10 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
+if (typeof useGLTF.setDecoderPath === "function") {
+  useGLTF.setDecoderPath("/draco/gltf/");
+}
+
 export default function Hat(props) {
   const { nodes, materials } = useGLTF('/models/hat-transformed.glb')
   const modelRef = useRef()
