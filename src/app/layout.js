@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
-import Sound from "@/components/Sound";
+import LazySound from "@/components/lazy/LazySound";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={clsx(inter.className , "bg-background text-foreground")}>
         {children}
-        <Sound />
+        <LazySound />
       </body>
     </html>
   );

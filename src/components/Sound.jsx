@@ -5,13 +5,20 @@ import { VolumeX, Volume2 } from 'lucide-react';
 
 export default function Sound() {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState();
-  const [showPrompt, setShowPrompt] = useState();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPrompt, setShowPrompt] = useState(false);
 
   const toggle = useCallback(() => {
     const newState = !isPlaying;
     setIsPlaying(newState);
-    newState ? audioRef.current.play() : audioRef.current.pause();
+    if (!audioRef.current) return;
+    if (newState) {
+      audioRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    } else {
+      audioRef.current.pause();
+    }
     const expirationTime = Date.now() + 3 * 24 * 60 * 60 * 1000;
     localStorage.setItem("musicConsent", JSON.stringify({ isPlaying: newState, expires: expirationTime }));
   }, [isPlaying]);
@@ -29,7 +36,6 @@ export default function Sound() {
 
   useEffect(() => {
     const musicConsent = JSON.parse(localStorage.getItem('musicConsent'));
-    console.log(musicConsent?.expires);
     if (musicConsent !== null) {
       setShowPrompt(false)
       setIsPlaying(musicConsent.isPlaying);
@@ -67,7 +73,7 @@ export default function Sound() {
         </div>
       )}
       <div className="fixed top-4 right-2.5 xs-right-4 z-50 group">
-        <audio ref={audioRef} loop>
+        <audio ref={audioRef} loop preload="none">
           <source src="/audio/birds39-forest-20772.mp3" type="audio/mpeg" />
         </audio>
         <motion.button

@@ -1,25 +1,22 @@
 import Image from "next/image";
-import FireFliesBG from "@/components/FireFliesBG";
-import  RenderModel  from "@/components/RenderModel";
 import bg from "../../../../public/background/about-background.png";
-import Hat from './../../../components/models/Hat';
 import AboutDetails from './../../../components/about/index';
+import LazyFirefliesBG from "@/components/lazy/LazyFirefliesBG";
+import LazyThreeModelScene from "@/components/lazy/LazyThreeModelScene";
 
 export default function Home() {
   
   return (
     <>
-      <FireFliesBG>
       <Image
         src={bg}
+        sizes="100vw"
         alt="bg-img"
         className="-z-50 fixed top-0 left-0 w-screen h-screen object-cover object-center opacity-50 pointer-events-none"
       />      
-      </FireFliesBG>      
+      <LazyFirefliesBG delayMs={500} />
       <div className="w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-1/2 -translate-y-1/2 left-0 z-10 mx-auto">
-        <RenderModel>
-          <Hat />
-        </RenderModel>
+        <LazyThreeModelScene model="Hat" />
       </div>
       <div className="relative w-full h-screen flex flex-col items-center justify-center">
         <div className="absolute flex flex-col items-center text-center top-1/2 sm:top-[60%] left-1/2 -translate-y-1 -translate-x-1/2">
