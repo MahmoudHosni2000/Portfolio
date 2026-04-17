@@ -3,14 +3,14 @@ export const projectsData = [
     id: 1,
     name: "SetraStore",
     description: "E-commerce storefront web app.",
-    date: "2026-04-17",
+    date: "2026-03-31",
     link: "https://setrastore.vercel.app/",
   },
   {
     id: 2,
     name: "Rayaa360",
     description: "Cloud platform website (Rayaa360).",
-    date: "2026-04-17",
+    date: "2025-06-16",
     link: "https://rayaa360.cloud/",
   },
   {
