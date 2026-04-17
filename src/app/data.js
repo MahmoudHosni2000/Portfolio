@@ -4,14 +4,14 @@ export const projectsData = [
     name: "SetraStore",
     description: "Latest project — source code on GitHub",
     date: "2026-04-17",
-    link: "https://github.com/MahmoudHosni2000/SetraStore",
+    link: "https://setrastore.vercel.app/",
   },
   {
     id: 2,
     name: "Rayaa360",
     description: "Latest project — source code on GitHub",
     date: "2026-04-17",
-    link: "https://github.com/MahmoudHosni2000/Rayaa360",
+    link: "https://rayaa360.cloud/",
   },
   {
     id: 3,
