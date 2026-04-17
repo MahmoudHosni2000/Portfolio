@@ -52,7 +52,7 @@ body {
   animation:
     firefly-flicker var(--flicker) ease-in-out infinite alternate,
     firefly-drift var(--drift) ease-in-out infinite alternate;
-  animation-delay: var(--delay);
+  animation-delay: var(--flickerDelay), var(--driftDelay);
 }
 
 @keyframes firefly-drift {
@@ -65,21 +65,17 @@ body {
 }
 
 @keyframes firefly-flicker {
-  0%,
-  19.999%,
-  22%,
-  62.999%,
-  64%,
-  64.999%,
-  70%,
-  100% {
+  0% {
     opacity: 0;
   }
-  20%,
-  21.999%,
-  63%,
-  63.999% {
-    opacity: 1;
+  35% {
+    opacity: 0.85;
+  }
+  65% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

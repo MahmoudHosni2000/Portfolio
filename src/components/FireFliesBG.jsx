@@ -13,8 +13,9 @@ const FireFliesBG = ({ children, count = 60 }) => {
       const dx = randomInRange(-6, 6);
       const dy = randomInRange(-6, 6);
       const size = randomInRange(2, 4.5);
-      const delay = randomInRange(0, 6);
-      const flicker = randomInRange(1.2, 3.8);
+      const flickerDelay = randomInRange(0, 8);
+      const driftDelay = randomInRange(0, 10);
+      const flicker = randomInRange(4, 10);
       const drift = randomInRange(10, 22);
 
       return (
@@ -27,7 +28,8 @@ const FireFliesBG = ({ children, count = 60 }) => {
             ["--dx"]: `${dx}vw`,
             ["--dy"]: `${dy}vh`,
             ["--size"]: `${size}px`,
-            ["--delay"]: `${delay}s`,
+            ["--flickerDelay"]: `${flickerDelay}s`,
+            ["--driftDelay"]: `${driftDelay}s`,
             ["--flicker"]: `${flicker}s`,
             ["--drift"]: `${drift}s`,
           }}
