@@ -38,21 +38,54 @@ body {
   }
 }
 
-@keyframes move {
-  0% {
-    transform: translate(0, 0);
-  }
+.firefly {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 9999px;
+  background-color: #ecc45e;
+  box-shadow: 0px 0px 17px 2px wheat;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation:
+    firefly-flicker var(--flicker) ease-in-out infinite alternate,
+    firefly-drift var(--drift) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
 
-  100% {
-    transform: translate(100px, 100px);
+@keyframes firefly-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--dx), var(--dy), 0);
   }
 }
 
-.firefly {
-  width: 4px;
-  height: 4px;
-  position: absolute;
-  background-color: #ecc45e;
-  box-shadow: 0px 0px 17px 2px wheat;
-  border-radius: 50%;
+@keyframes firefly-flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .firefly {
+    animation: none;
+    opacity: 0.6;
+  }
 }

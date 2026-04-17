@@ -1,56 +1,48 @@
 "use client";
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useMemo } from "react";
 
 // Function to generate random number within a range
 const randomInRange = (min, max) => Math.random() * (max - min) + min;
 
-// Keyframes for firefly animation
-const flicker = keyframes`
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: 0;
-  }
-  20%, 21.999%, 63%, 63.999% {
-    opacity: 1;
-  }
-`;
-
-// Firefly component
-const Firefly = styled.div`
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #fff;
-  animation: ${flicker} ${() => randomInRange(1, 4)}s infinite alternate;
-`;
-
 // Firefly background component
-const FireFliesBG = ({ children }) => {
-  useEffect(() => {
-    const container = document.getElementById('fireflies-container');
-    const numberOfFireflies = 100; // Adjust as needed
+const FireFliesBG = ({ children, count = 60 }) => {
+  const fireflies = useMemo(() => {
+    return Array.from({ length: count }, (_, index) => {
+      const x = randomInRange(0, 100);
+      const y = randomInRange(0, 100);
+      const dx = randomInRange(-6, 6);
+      const dy = randomInRange(-6, 6);
+      const size = randomInRange(2, 4.5);
+      const delay = randomInRange(0, 6);
+      const flicker = randomInRange(1.2, 3.8);
+      const drift = randomInRange(10, 22);
 
-    // Create fireflies
-    for (let i = 0; i < numberOfFireflies; i++) {
-      const firefly = document.createElement('div');
-      firefly.className = 'firefly';
-      container.appendChild(firefly);
-      firefly.style.left = `${randomInRange(0, 100)}vw`;
-      firefly.style.top = `${randomInRange(0, 100)}vh`;
-    }
-
-    // Clean up function
-    return () => {
-      const fireflies = document.querySelectorAll('.firefly');
-      fireflies.forEach(firefly => firefly.remove());
-    };
-  }, []);
+      return (
+        <span
+          key={index}
+          className="firefly"
+          style={{
+            ["--x"]: `${x}vw`,
+            ["--y"]: `${y}vh`,
+            ["--dx"]: `${dx}vw`,
+            ["--dy"]: `${dy}vh`,
+            ["--size"]: `${size}px`,
+            ["--delay"]: `${delay}s`,
+            ["--flicker"]: `${flicker}s`,
+            ["--drift"]: `${drift}s`,
+          }}
+        />
+      );
+    });
+  }, [count]);
 
   return (
-    <div id="fireflies-container" className="fireflies fixed inset-0 -z-10" >
+    <div
+      className="fireflies fixed inset-0 -z-10 pointer-events-none"
+      aria-hidden="true"
+    >
       {children}
-      <Firefly />
+      {fireflies}
     </div>
   );
 };
