@@ -13,6 +13,7 @@ import React from "react";
 import ResponsiveComponent from "../ResponsiveComponent";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import WhatsAppIcon from "../icons/WhatsAppIcon";
 
 const getIcon = (icon) => {
   switch (icon) {
@@ -32,6 +33,8 @@ const getIcon = (icon) => {
       return <Send className="w-full h-auto" strokeWidth={1.5} />;
     case "resume":
       return <NotebookText className="w-full h-auto" strokeWidth={1.5} />;
+    case "whatsapp":
+      return <WhatsAppIcon className="w-full h-auto" />;
 
     default:
       return <Home className="w-full h-auto" strokeWidth={1.5} />;
@@ -50,7 +53,7 @@ const NavButton = ({ x, y, label, link, icon, newTab,  labelDirection = "right"}
   const effectiveLabel = isHome ? "Whatsapp" : label;
   const effectiveLink = isHome ? "https://wa.me/201062508909" : link;
   const effectiveNewTab = isHome ? true : newTab;
-  const effectiveIcon = isHome ? "contact" : icon;
+  const effectiveIcon = isHome ? "whatsapp" : icon;
 
   return (
     <ResponsiveComponent>
