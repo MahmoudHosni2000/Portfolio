@@ -46,6 +46,12 @@ const item = {
 const NavLink = motion(Link);
 
 const NavButton = ({ x, y, label, link, icon, newTab,  labelDirection = "right"}) => {
+  const isHome = label === "Home";
+  const effectiveLabel = isHome ? "Whatsapp" : label;
+  const effectiveLink = isHome ? "https://wa.me/201062508909" : link;
+  const effectiveNewTab = isHome ? true : newTab;
+  const effectiveIcon = isHome ? "contact" : icon;
+
   return (
     <ResponsiveComponent>
       {({ size }) => {
@@ -56,21 +62,21 @@ const NavButton = ({ x, y, label, link, icon, newTab,  labelDirection = "right"}
           >
             <NavLink
               variants={item}
-              href={link}
-              target={newTab ? "_blank" : "_self"}
+              href={effectiveLink}
+              target={effectiveNewTab ? "_blank" : "_self"}
               className="text-foreground  rounded-full flex items-center justify-center custom-bg"
-              aria-label={label}
-              name={label}
+              aria-label={effectiveLabel}
+              name={effectiveLabel}
               prefetch={false}
               scroll={false}
             >
               <span className="relative  w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent">
-                {getIcon(icon)}
+                {getIcon(effectiveIcon)}
 
                 <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
 
                 <span className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
-                  {label}
+                  {effectiveLabel}
                 </span>
               </span>
             </NavLink>
@@ -79,22 +85,22 @@ const NavButton = ({ x, y, label, link, icon, newTab,  labelDirection = "right"}
           <div className="w-fit cursor-pointer z-50">
             <NavLink
               variants={item}
-              href={link}
-              target={newTab ? "_blank" : "_self"}
+              href={effectiveLink}
+              target={effectiveNewTab ? "_blank" : "_self"}
               className="text-foreground  rounded-full flex items-center justify-center custom-bg"
-              aria-label={label}
-              name={label}
+              aria-label={effectiveLabel}
+              name={effectiveLabel}
               prefetch={false}
               scroll={false}
             >
               <span className="relative  w-10 h-10  xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
-                {getIcon(icon)}
+                {getIcon(effectiveIcon)}
                 <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
                 <span className={clsx(
                 "absolute hidden peer-hover:block px-2 py-1 mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap",
                 labelDirection === "left" ? "right-full left-auto" : "left-full"
               )}>
-                {label}
+                {effectiveLabel}
               </span>
               </span>
             </NavLink>
