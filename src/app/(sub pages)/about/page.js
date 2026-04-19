@@ -5,7 +5,7 @@ import LazyFirefliesBG from "@/components/lazy/LazyFirefliesBG";
 import LazyThreeModelScene from "@/components/lazy/LazyThreeModelScene";
 
 export default function Home() {
-  
+
   return (
     <>
       <Image
@@ -13,13 +13,13 @@ export default function Home() {
         sizes="100vw"
         alt="bg-img"
         className="-z-50 fixed top-0 left-0 w-screen h-screen object-cover object-center opacity-50 pointer-events-none"
-      />      
+      />
       <LazyFirefliesBG delayMs={500} />
-      <div className="w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-1/2 -translate-y-1/2 left-0 z-10 mx-auto">
+      <div className="w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-[42%] xs:top-1/2 -translate-y-1/2 left-0 z-0 mx-auto">
         <LazyThreeModelScene model="Hat" />
       </div>
-      <div className="relative w-full h-screen flex flex-col items-center justify-center">
-        <div className="absolute flex flex-col items-center text-center top-1/2 sm:top-[60%] left-1/2 -translate-y-1 -translate-x-1/2">
+      <div className="relative w-full min-h-[45vh] xs:min-h-[50vh] sm:h-screen flex flex-col items-center justify-center">
+        <div className="absolute z-10 flex flex-col items-center text-center top-1/2 sm:top-[60%] left-1/2 -translate-y-1 -translate-x-1/2">
           <h1 className="font-bold text-6xl xs:text-7xl sm:text-8xl lg:text-9xl text-accent">Mahmoud Hosni</h1>
           <p className="font-light text-lg text-foreground">Meet the wizard behind this portfolio!</p>
         </div>

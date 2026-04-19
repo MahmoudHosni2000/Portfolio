@@ -54,7 +54,7 @@ export default function Sound() {
   return (
     <>
       {showPrompt && (
-        <div className="fixed inset-0 bg-background/60 backdrop-blur-sm flex items-center justify-center">
+        <div className="fixed inset-0 z-[60] bg-background/60 backdrop-blur-sm flex items-center justify-center">
           <div className="bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] py-8 px-6 xs:px-10 sm:px-16 rounded shadow-glass-inset text-center space-y-8">
             <p>Do you like to play the background music?</p>
             <button
@@ -72,7 +72,7 @@ export default function Sound() {
           </div>
         </div>
       )}
-      <div className="fixed top-4 right-2.5 xs-right-4 z-50 group">
+      <div className="fixed top-4 right-2.5 xs-right-4 z-[70] group">
         <audio ref={audioRef} loop preload="none">
           <source src="/audio/birds39-forest-20772.mp3" type="audio/mpeg" />
         </audio>
