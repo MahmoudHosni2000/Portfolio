@@ -10,7 +10,6 @@ export default function Navigation() {
   const size = useScreenSize();
   const isLarge = size >= 1024;
   const isMedium = size >= 768;
-  console.log(size);
 
   const angleTheta = 360 / BtnList.length;
   const container = {

@@ -1,22 +1,13 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import React, { useMemo } from "react";
-import IdleMount from "./IdleMount";
-
-const RenderModel = dynamic(() => import("@/components/RenderModel"), {
-  ssr: false,
-});
-
-const Wizard = dynamic(() => import("@/components/models/Wizard"), {
-  ssr: false,
-});
-const Hat = dynamic(() => import("@/components/models/Hat"), { ssr: false });
-const Staff = dynamic(() => import("@/components/models/Staff"), { ssr: false });
+import RenderModel from "@/components/RenderModel";
+import Hat from "@/components/models/Hat";
+import Staff from "@/components/models/Staff";
+import Wizard from "@/components/models/Wizard";
 
 export default function LazyThreeModelScene({
   model,
-  delayMs = 1200,
   className,
 }) {
   const Model = useMemo(() => {
@@ -26,11 +17,8 @@ export default function LazyThreeModelScene({
   }, [model]);
 
   return (
-    <IdleMount delayMs={delayMs} fallback={null}>
-      <RenderModel className={className}>
-        <Model />
-      </RenderModel>
-    </IdleMount>
+    <RenderModel className={className}>
+      <Model />
+    </RenderModel>
   );
 }
-

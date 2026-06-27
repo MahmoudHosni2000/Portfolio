@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import LazySound from "@/components/lazy/LazySound";
+import ModelPreloads from "@/components/lazy/ModelPreloads";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,44 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/draco/gltf/draco_decoder.js" as="script" />
+        <link
+          rel="preload"
+          href="/draco/gltf/draco_decoder.wasm"
+          as="fetch"
+          type="application/wasm"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/draco/gltf/draco_wasm_wrapper.js"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="/models/wizard-transformed.glb"
+          as="fetch"
+          type="model/gltf-binary"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/models/hat-transformed.glb"
+          as="fetch"
+          type="model/gltf-binary"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/models/staff-transformed.glb"
+          as="fetch"
+          type="model/gltf-binary"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={clsx(inter.className , "bg-background text-foreground")}>
+        <ModelPreloads />
         {children}
         <LazySound />
       </body>
