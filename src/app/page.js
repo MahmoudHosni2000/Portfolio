@@ -52,13 +52,13 @@ const line = "1px solid rgba(200,180,60,.45)";
 
 function TopBar() {
   return (
-    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 w-full">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-3 w-full">
       <span className="text-[13px] lg:text-[15px] tracking-[3px] uppercase text-[#d8b93c] leading-tight">
         Mahmoud Hosny
       </span>
       <nav
         aria-label="Main"
-        className="flex items-center justify-between lg:justify-start gap-1 lg:gap-2 rounded-full px-2 lg:px-3 py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
+        className="flex items-center justify-between lg:justify-start gap-1 lg:gap-2 rounded-full px-3 lg:px-3 py-2.5 lg:py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
         style={{ border: "1px solid rgba(216,185,60,.28)", boxShadow: "0 4px 24px rgba(0,0,0,.35)" }}
       >
         {navLinks.map((l) => (
@@ -178,15 +178,19 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-[#e1e1e1]">
       {/* Mobile: wizard scene banner, then stacked info layer */}
-      <div className="lg:hidden flex flex-col min-h-screen">
+      <div className="lg:hidden relative flex flex-col min-h-screen">
+        <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.5)" }} />
+        </div>
         <div
-          className="relative w-full overflow-hidden"
-          style={{ height: "clamp(420px, 62svh, 560px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b" }}
+          className="relative z-10 w-full overflow-hidden"
+          style={{ height: "clamp(470px, 64svh, 600px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b" }}
         >
           <LiveScene modelScale={0.8} />
           <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 78%, #1b1b1b 100%)" }} />
-          <div className="relative z-10 px-[18px] pt-[18px]">
+            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 78%, rgba(8,12,14,.5) 100%)" }} />
+          <div className="relative z-10 px-[20px] pt-[26px]">
             <TopBar />
           </div>
         </div>
