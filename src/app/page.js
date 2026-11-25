@@ -184,6 +184,19 @@ export default function Home() {
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
           <div className="absolute -inset-10" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "30% 80%", filter: "blur(22px) saturate(.8)", opacity: 0.4, transform: "scale(1.5)" }} />
           <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.7)" }} />
+          <style>{`
+.amb-mist{position:absolute;left:-30%;width:160%;height:45%;border-radius:50%;filter:blur(40px);will-change:transform;opacity:.0}
+.amb-mist.a{bottom:-8%;background:radial-gradient(ellipse at center,rgba(120,170,160,.16),transparent 65%);animation:ambMistA 38s ease-in-out infinite alternate;opacity:1}
+.amb-mist.b{top:40%;background:radial-gradient(ellipse at center,rgba(216,185,60,.07),transparent 65%);animation:ambMistB 52s ease-in-out infinite alternate;opacity:1}
+@keyframes ambMistA{from{transform:translate3d(-6%,0,0)}to{transform:translate3d(8%,-4%,0)}}
+@keyframes ambMistB{from{transform:translate3d(7%,0,0)}to{transform:translate3d(-7%,5%,0)}}
+.amb-fly{position:absolute;width:3px;height:3px;border-radius:50%;background:#f0d36a;box-shadow:0 0 8px 2px rgba(240,211,106,.55);opacity:0;will-change:transform,opacity;animation:ambFly 10s ease-in-out infinite}
+@keyframes ambFly{0%{opacity:0;transform:translate3d(0,0,0)}20%{opacity:.7}50%{opacity:.25;transform:translate3d(14px,-26px,0)}80%{opacity:.65}100%{opacity:0;transform:translate3d(-10px,-52px,0)}}
+@media (prefers-reduced-motion:reduce){.amb-mist,.amb-fly{animation:none}.amb-fly{opacity:.3}}
+`}</style>
+          <div className="amb-mist a" />
+          <div className="amb-mist b" />
+          <i className="amb-fly" style={{ left: "12%", top: "78%", animationDelay: "-0s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "30%", top: "92%", animationDelay: "-2s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "52%", top: "70%", animationDelay: "-5s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "70%", top: "88%", animationDelay: "-1s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "86%", top: "74%", animationDelay: "-4s", animationDuration: "11s" }} /><i className="amb-fly" style={{ left: "22%", top: "60%", animationDelay: "-7s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "62%", top: "96%", animationDelay: "-3s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "92%", top: "62%", animationDelay: "-6s", animationDuration: "10s" }} />
         </div>
         <div
           className="relative z-10 w-full overflow-hidden"
