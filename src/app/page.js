@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Send } from "lucide-react";
+import { Github, Linkedin, Send, User, Palette, Phone } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import LiveScene from "@/components/landing/LiveScene";
 const bgUrl = "url(/background/home-background.png)";
@@ -44,9 +44,9 @@ const projects = [
 const chips = ["React", "Next.js", "TypeScript", "Tailwind", "C#", "ASP.NET Core", "SQL Server", "Three.js"];
 
 const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Work", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/about", Icon: User },
+  { label: "Work", href: "/projects", Icon: Palette },
+  { label: "Contact", href: "/contact", Icon: Phone },
 ];
 
 const socials = [
@@ -66,17 +66,19 @@ function TopBar() {
       </span>
       <nav
         aria-label="Main"
-        className="flex flex-wrap items-center justify-center lg:justify-start gap-x-0.5 gap-y-1 rounded-[22px] lg:rounded-full max-w-full min-w-0 px-2.5 lg:px-3 py-2 lg:py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
+        className="flex flex-nowrap items-center justify-around lg:justify-start gap-x-0.5 rounded-full max-w-full min-w-0 px-2.5 lg:px-3 py-2 lg:py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
         style={{ border: "1px solid rgba(216,185,60,.28)", boxShadow: "0 4px 24px rgba(0,0,0,.35)" }}
       >
         {navLinks.map((l) => (
           <Link key={l.label} href={l.href}
-            className="px-1.5 lg:px-2.5 py-1.5 rounded-full text-[12.5px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
-            {l.label}
+            aria-label={l.label}
+            className="flex items-center justify-center w-11 h-9 lg:w-auto lg:h-auto lg:px-2.5 lg:py-1.5 rounded-full text-[12.5px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
+            <l.Icon className="w-[20px] h-[20px] lg:hidden" strokeWidth={1.6} aria-hidden="true" />
+            <span className="hidden lg:inline">{l.label}</span>
           </Link>
         ))}
         <span className="hidden lg:block w-px h-5 mx-1.5 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
-        <div className="flex items-center gap-0.5 lg:gap-1">
+        <div className="hidden lg:flex items-center gap-0.5 lg:gap-1">
         {socials.map(({ label, href, Icon }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
               className="group relative w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
