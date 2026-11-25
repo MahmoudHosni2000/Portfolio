@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Send } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import LiveScene from "@/components/landing/LiveScene";
 const bgUrl = "url(/background/home-background.png)";
 
@@ -51,6 +52,8 @@ const navLinks = [
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/mahmoudhosni2000/", Icon: Linkedin },
   { label: "GitHub", href: "https://github.com/MahmoudHosni2000", Icon: Github },
+  { label: "WhatsApp", href: "https://wa.me/201062508909", Icon: WhatsAppIcon },
+  { label: "Telegram", href: "https://t.me/MahmoudHosni0007", Icon: Send },
 ];
 
 const line = "1px solid rgba(200,180,60,.45)";
