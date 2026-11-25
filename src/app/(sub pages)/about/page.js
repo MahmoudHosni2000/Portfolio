@@ -19,8 +19,8 @@ export default function Home() {
         <LazyThreeModelScene model="Hat" />
       </div>
       <div className="relative w-full min-h-[45vh] xs:min-h-[50vh] sm:h-screen flex flex-col items-center justify-center">
-        <div className="absolute z-10 flex flex-col items-center text-center top-1/2 sm:top-[60%] left-1/2 -translate-y-1 -translate-x-1/2">
-          <h1 className="font-bold text-6xl xs:text-7xl sm:text-8xl lg:text-9xl text-accent">Mahmoud Hosni</h1>
+        <div className="absolute z-10 flex flex-col items-center text-center top-[56%] sm:top-[60%] left-1/2 -translate-y-1 -translate-x-1/2">
+          <h1 className="font-bold text-5xl xs:text-6xl sm:text-8xl lg:text-9xl text-accent">Mahmoud Hosny</h1>
           <p className="font-light text-lg text-foreground">Meet the wizard behind this portfolio!</p>
         </div>
       </div>
