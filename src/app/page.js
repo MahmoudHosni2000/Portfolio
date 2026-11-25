@@ -173,19 +173,6 @@ function Projects({ desktop }) {
   );
 }
 
-function Cta({ desktop }) {
-  return (
-    <div className={`text-center text-[12px] lg:text-[13px] text-[#a9aeb0] tracking-[1px] ${desktop ? "" : "mt-2 pb-2"}`}>
-      <Link href="/wizard"
-        className="inline-block px-[18px] py-2 rounded-sm bg-[rgba(27,27,27,.6)] text-[#e1e1e1]"
-        style={{ border: line }}>
-        Enter the 3D experience →
-      </Link>
-    </div>
-  );
-}
-
-
 const DESK_CSS = `
 .desk{--z:1;zoom:var(--z);height:calc(100dvh / var(--z))}
 @media (max-height:699px){.desk{--z:.9}}
@@ -229,7 +216,6 @@ export default function Home() {
         <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
           <Info part="body" />
           <Projects />
-          <Cta />
         </div>
       </div>
 
@@ -255,9 +241,6 @@ export default function Home() {
           </div>
           <div className="absolute right-14 top-[110px]">
             <Projects desktop />
-          </div>
-          <div className="absolute left-0 right-0 bottom-[26px]">
-            <Cta desktop />
           </div>
         </div>
       </div>
