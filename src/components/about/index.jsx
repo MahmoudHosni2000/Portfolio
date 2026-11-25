@@ -22,7 +22,7 @@ export default function AboutDetails() {
                 </ItemLayout>
                 <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent flex-col !space-y-2 text-center'} >
                     <p className='font-bold leading-none text-6xl sm:text-7xl'>2+</p>
-                    <p className='font-semibold text-base sm:text-lg leading-snug max-w-[14rem]'>years building production apps</p>
+                    <p className='font-semibold text-base sm:text-lg leading-snug max-w-[20rem] text-balance'>years building production apps</p>
                 </ItemLayout>
                 <ItemLayout className={"col-span-full"}>
                     <Image
