@@ -187,10 +187,8 @@ function Projects({ desktop }) {
 function Cta({ desktop }) {
   return (
     <div className={`text-center text-[12px] lg:text-[13px] text-[#a9aeb0] tracking-[1px] ${desktop ? "" : "mt-2 pb-2"}`}>
-      THE WIZARD STAYS. CLICK HIM OR THE ICONS TO EXPLORE THE FULL 3D WORLD
-      <br />
       <Link href="/wizard"
-        className="inline-block mt-1.5 px-[18px] py-2 rounded-sm bg-[rgba(27,27,27,.6)] text-[#e1e1e1]"
+        className="inline-block px-[18px] py-2 rounded-sm bg-[rgba(27,27,27,.6)] text-[#e1e1e1]"
         style={{ border: line }}>
         Enter the 3D experience →
       </Link>
