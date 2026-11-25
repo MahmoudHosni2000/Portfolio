@@ -16,11 +16,17 @@ export default function LiveScene({ modelScale = 1 }) {
     >
       <LazyFirefliesBG delayMs={400} className="!absolute" />
       <div
-        className="w-full h-full"
+        className="absolute"
         style={
           modelScale === 1
-            ? undefined
-            : { transform: `scale(${modelScale})`, transformOrigin: "center 55%" }
+            ? { inset: 0 }
+            : {
+                width: `${modelScale * 100}%`,
+                height: `${modelScale * 100}%`,
+                left: "50%",
+                top: "56%",
+                transform: "translate(-50%, -50%)",
+              }
         }
       >
         <LazyThreeModelScene model="Wizard" delayMs={900} />
