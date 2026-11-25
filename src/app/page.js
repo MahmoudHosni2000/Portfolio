@@ -172,7 +172,7 @@ function Projects({ desktop }) {
             {p.demo && (
               <div className="mt-2 px-2 py-1.5 rounded-sm text-[11px] leading-[1.5] text-[#e1e1e1] bg-[rgba(216,185,60,.08)]" style={{ border: "1px dashed rgba(216,185,60,.45)" }}>
                 <span className="text-[#d8b93c] tracking-[1px] uppercase text-[10px] block">Demo login · try it live</span>
-                <span className="text-[#a9aeb0]">Email: </span><span className="break-all select-all">{p.demo.email}</span>
+                <span className="text-[#a9aeb0]">Email: </span><br /><span className="whitespace-nowrap text-[10.5px] select-all">{p.demo.email}</span>
                 <br />
                 <span className="text-[#a9aeb0]">Password: </span><span className="select-all">{p.demo.pass}</span>
               </div>
