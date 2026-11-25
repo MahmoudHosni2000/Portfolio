@@ -77,19 +77,6 @@ function TopBar() {
             <span className="hidden lg:inline">{l.label}</span>
           </Link>
         ))}
-        <span className="hidden lg:block w-px h-5 mx-1.5 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
-        <div className="hidden lg:flex items-center gap-0.5 lg:gap-1">
-        {socials.map(({ label, href, Icon }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-              className="group relative w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
-              <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
-              <span className="pointer-events-none absolute top-full mt-2 right-0 hidden group-hover:block group-focus:block px-2 py-1 rounded-md text-[12px] whitespace-nowrap text-[#e1e1e1] bg-[rgba(10,14,16,.92)] shadow-lg"
-                style={{ border: "1px solid rgba(216,185,60,.3)" }}>
-                {label}
-              </span>
-            </a>
-          ))}
-  </div>
       </nav>
     </div>
   );
