@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LiveScene from "@/components/landing/LiveScene";
-import { bgUrl } from "@/components/landing/bg";
+const bgUrl = "url(/background/home-background.png)";
 
 const projects = [
   {
@@ -163,7 +163,7 @@ export default function Home() {
       <div className="lg:hidden flex flex-col min-h-screen">
         <div
           className="relative h-[420px] w-full overflow-hidden"
-          style={{ backgroundImage: bgUrl, backgroundSize: "auto 420px", backgroundPosition: "center top", backgroundRepeat: "no-repeat", backgroundColor: "#101417" }}
+          style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#101417" }}
         >
           <LiveScene modelScale={0.62} />
           <div className="absolute inset-0 z-[2] pointer-events-none"
@@ -179,28 +179,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Desktop: approved fixed-canvas composition, centered */}
-      <div className="hidden lg:flex min-h-screen items-center justify-center">
+      {/* Desktop: original forest scene full-viewport (like /wizard), layout on top */}
+      <div className="hidden lg:block relative min-h-screen overflow-hidden bg-[#1b1b1b]">
         <div
-          className="relative w-[1280px] h-[720px] max-w-full overflow-hidden"
-          style={{ backgroundImage: bgUrl, backgroundSize: "1280px 720px", backgroundPosition: "center top", backgroundRepeat: "no-repeat", backgroundColor: "#101417" }}
-        >
-          <LiveScene />
-          <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(8,12,14,.93) 0%, rgba(8,12,14,.8) 33%, rgba(8,12,14,.05) 48%, rgba(8,12,14,.05) 62%, rgba(8,12,14,.82) 100%), radial-gradient(transparent 50%, rgba(0,5,10,.5) 100%)",
-            }} />
-          <div className="absolute left-14 right-14 top-[34px] z-10">
+          className="absolute inset-0"
+          style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.8 }}
+        />
+        <LiveScene />
+        <div className="absolute inset-0 z-[2] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(8,12,14,.78) 0%, rgba(8,12,14,.55) 28%, rgba(8,12,14,0) 44%, rgba(8,12,14,0) 62%, rgba(8,12,14,.6) 100%)",
+          }} />
+        <div className="relative z-10 mx-auto w-[1280px] max-w-full h-screen min-h-[720px]">
+          <div className="absolute left-14 right-14 top-[34px]">
             <TopBar />
           </div>
-          <div className="absolute left-14 top-[130px] z-10">
+          <div className="absolute left-14 top-[130px]">
             <Info desktop />
           </div>
-          <div className="absolute right-14 top-[110px] z-10">
+          <div className="absolute right-14 top-[110px]">
             <Projects desktop />
           </div>
-          <div className="absolute left-0 right-0 bottom-[26px] z-10">
+          <div className="absolute left-0 right-0 bottom-[26px]">
             <Cta desktop />
           </div>
         </div>
