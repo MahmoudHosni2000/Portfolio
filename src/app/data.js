@@ -4,14 +4,14 @@ export const projectsData = [
     name: "Menu.Web API",
     description: "ASP.NET Core ordering API with SQL Server, Redis, JWT and Stripe.",
     date: "2026-10-20",
-    link: "https://github.com/MahmoudHosni2000/Menu.Web",
+    link: "https://restaurantmenuapi.runasp.net/swagger/index.html",
   },
   {
     id: 2,
     name: "E.Commerce API",
     description: "ASP.NET Core catalog API with search, filtering, sorting and paging.",
     date: "2026-10-20",
-    link: "https://github.com/MahmoudHosni2000/E.Commerce",
+    link: "https://mahmoud-ecommerce-api.runasp.net/swagger/index.html",
   },
   {
     id: 3,
