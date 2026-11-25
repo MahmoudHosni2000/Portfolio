@@ -63,21 +63,23 @@ function TopBar() {
       >
         {navLinks.map((l) => (
           <Link key={l.label} href={l.href}
-            className="px-3 lg:px-4 py-1.5 rounded-full text-[13px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
+            className="px-2 lg:px-4 py-1.5 rounded-full text-[13px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
             {l.label}
           </Link>
         ))}
-        <span className="w-px h-5 mx-1 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
+        <span className="w-px h-5 mx-2 lg:mx-3 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
+        <div className="flex items-center gap-3 lg:gap-4">
         {socials.map(({ label, href, Icon }) => (
-          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-            className="group relative w-9 h-9 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
-            <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
-            <span className="pointer-events-none absolute top-full mt-2 right-0 hidden group-hover:block group-focus:block px-2 py-1 rounded-md text-[12px] whitespace-nowrap text-[#e1e1e1] bg-[rgba(10,14,16,.92)] shadow-lg"
-              style={{ border: "1px solid rgba(216,185,60,.3)" }}>
-              {label}
-            </span>
-          </a>
-        ))}
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+              className="group relative w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
+              <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
+              <span className="pointer-events-none absolute top-full mt-2 right-0 hidden group-hover:block group-focus:block px-2 py-1 rounded-md text-[12px] whitespace-nowrap text-[#e1e1e1] bg-[rgba(10,14,16,.92)] shadow-lg"
+                style={{ border: "1px solid rgba(216,185,60,.3)" }}>
+                {label}
+              </span>
+            </a>
+          ))}
+  </div>
       </nav>
     </div>
   );
