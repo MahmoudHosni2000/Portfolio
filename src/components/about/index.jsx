@@ -20,10 +20,9 @@ export default function AboutDetails() {
                         relocation, so if you have a spell that needs casting, get in touch.
                     </p>
                 </ItemLayout>
-                <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent'} >
-                    <p className='font-semibold w-full text-left text-2xl sm:text-5xl'>
-                        2+ <sub className='font-semibold text-base'>years building production apps</sub>
-                    </p>
+                <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent flex-col !space-y-2 text-center'} >
+                    <p className='font-bold leading-none text-6xl sm:text-7xl'>2+</p>
+                    <p className='font-semibold text-base sm:text-lg leading-snug max-w-[14rem]'>years building production apps</p>
                 </ItemLayout>
                 <ItemLayout className={"col-span-full"}>
                     <Image
