@@ -181,7 +181,7 @@ export default function Home() {
       <div className="lg:hidden relative flex flex-col min-h-screen">
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
           <div className="absolute inset-0" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.55 }} />
-          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.5)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.62)" }} />
         </div>
         <div
           className="relative z-10 w-full overflow-hidden"
@@ -189,7 +189,7 @@ export default function Home() {
         >
           <LiveScene modelScale={0.8} />
           <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 78%, rgba(8,12,14,.5) 100%)" }} />
+            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 62%, rgba(8,12,14,.88) 100%)" }} />
           <div className="relative z-10 px-[20px] pt-[26px]">
             <TopBar />
           </div>
