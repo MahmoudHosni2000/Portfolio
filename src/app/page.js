@@ -85,9 +85,12 @@ function TopBar() {
   );
 }
 
-function Info({ desktop }) {
+function Info({ desktop, part }) {
+  const head = part !== "body";
+  const body = part !== "head";
   return (
     <div className={desktop ? "w-[440px]" : "w-full"}>
+      {head && (<>
       <span className="inline-block text-[#d8b93c] text-[12.5px] tracking-[.4px] px-3 py-1.5 rounded-sm bg-[rgba(27,27,27,.55)]" style={{ border: line }}>
         Open to remote or relocation
       </span>
@@ -97,6 +100,8 @@ function Info({ desktop }) {
       <div className={desktop ? "text-[17px] mb-4 whitespace-nowrap" : "text-[16px] mb-3"}>
         Full-Stack Developer · React/Next.js + ASP.NET Core
       </div>
+      </>)}
+      {body && (<>
       <p className={`text-[#a9aeb0] leading-[1.6] ${desktop ? "text-[15px] mb-[22px]" : "text-[14px] mb-[18px]"}`}>
         I build fast React and Next.js front ends and the ASP.NET Core APIs behind them. Cairo based, shipping real apps for real users, and looking for my next full-stack role.
       </p>
@@ -122,6 +127,7 @@ function Info({ desktop }) {
           LinkedIn
         </a>
       </div>
+      </>)}
     </div>
   );
 }
@@ -198,19 +204,18 @@ export default function Home() {
           <div className="amb-mist b" />
           <i className="amb-fly" style={{ left: "44%", top: "27%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "71%", top: "20%", width: 3, height: 3, animationDelay: "-5s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "7%", top: "19%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "33%", top: "19%", width: 2, height: 2, animationDelay: "-8s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "75%", top: "23%", width: 4, height: 4, animationDelay: "-3s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "9%", top: "36%", width: 3, height: 3, animationDelay: "-0s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "56%", top: "26%", width: 3, height: 3, animationDelay: "-8s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "74%", top: "95%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "50%", top: "20%", width: 2, height: 2, animationDelay: "-8s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "82%", top: "34%", width: 3, height: 3, animationDelay: "-7s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "62%", top: "82%", width: 3, height: 3, animationDelay: "-14s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "41%", top: "39%", width: 3, height: 3, animationDelay: "-12s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "13%", top: "81%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "96%", top: "65%", width: 2, height: 2, animationDelay: "-4s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "68%", top: "61%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "65%", top: "61%", width: 3, height: 3, animationDelay: "-0s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "46%", top: "96%", width: 4, height: 4, animationDelay: "-5s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "11%", top: "19%", width: 2, height: 2, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "10%", top: "97%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "94%", top: "57%", width: 2, height: 2, animationDelay: "-14s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "62%", top: "53%", width: 4, height: 4, animationDelay: "-2s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "10%", top: "35%", width: 3, height: 3, animationDelay: "-12s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "34%", top: "58%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "24%", top: "65%", width: 3, height: 3, animationDelay: "-6s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "58%", top: "78%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "90%", top: "56%", width: 2, height: 2, animationDelay: "-3s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "25%", top: "27%", width: 2, height: 2, animationDelay: "-3s", animationDuration: "11s" }} /><i className="amb-fly" style={{ left: "65%", top: "83%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "3%", top: "26%", width: 3, height: 3, animationDelay: "-6s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "19%", top: "96%", width: 4, height: 4, animationDelay: "-13s", animationDuration: "8s" }} />
         </div>
+        <div className="relative z-10 px-[20px] pt-[26px]">
+          <TopBar />
+          <div className="mt-1"><Info part="head" /></div>
+        </div>
         <div
-          className="relative z-10 w-full overflow-hidden"
-          style={{ height: "clamp(470px, 64svh, 600px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)", maskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)" }}
+          className="relative z-10 w-full overflow-hidden -mt-2"
+          style={{ height: "clamp(380px, 50svh, 480px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
         >
-          <LiveScene modelScale={1.12} />
-          <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 62%, rgba(8,12,14,0) 100%)" }} />
-          <div className="relative z-10 px-[20px] pt-[26px]">
-            <TopBar />
-          </div>
+          <LiveScene modelScale={1.0001} />
         </div>
         <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
-          <Info />
+          <Info part="body" />
           <Projects />
           <Cta />
         </div>
