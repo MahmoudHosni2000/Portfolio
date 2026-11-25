@@ -8,10 +8,10 @@ const FireFliesBG = dynamic(() => import("@/components/FireFliesBG"), {
   ssr: false,
 });
 
-export default function LazyFirefliesBG({ delayMs = 0 }) {
+export default function LazyFirefliesBG({ delayMs = 0, className }) {
   return (
     <IdleMount delayMs={delayMs} fallback={null}>
-      <FireFliesBG />
+      <FireFliesBG className={className} />
     </IdleMount>
   );
 }
