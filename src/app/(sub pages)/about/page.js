@@ -24,7 +24,9 @@ export default function Home() {
           <p className="font-light text-lg text-foreground [text-shadow:0_1px_12px_rgba(0,0,0,0.9)]">Meet the wizard behind this portfolio!</p>
         </div>
       </div>
-      <AboutDetails />
+      <div className="w-[calc(100%+2rem)] -mx-4 xs:w-full xs:mx-0">
+        <AboutDetails />
+      </div>
     </>
   );
 }
