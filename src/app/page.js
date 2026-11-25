@@ -180,17 +180,17 @@ export default function Home() {
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden flex flex-col min-h-screen">
         <div
-          className="relative h-[420px] w-full overflow-hidden"
-          style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#101417" }}
+          className="relative w-full overflow-hidden"
+          style={{ height: "clamp(420px, 62svh, 560px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b" }}
         >
-          <LiveScene modelScale={0.62} />
+          <LiveScene modelScale={0.8} />
           <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.88) 0%, rgba(8,12,14,.1) 22%, rgba(8,12,14,.05) 40%, rgba(8,12,14,.55) 55%, rgba(8,12,14,.96) 62%, rgba(8,12,14,.97) 100%)" }} />
+            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 78%, #1b1b1b 100%)" }} />
           <div className="relative z-10 px-[18px] pt-[18px]">
             <TopBar />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-24 relative z-10">
+        <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
           <Info />
           <Projects />
           <Cta />
