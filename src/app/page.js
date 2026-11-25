@@ -181,16 +181,16 @@ export default function Home() {
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden relative flex flex-col min-h-screen">
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-0" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.55 }} />
-          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.62)" }} />
+          <div className="absolute -inset-10" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "30% 80%", filter: "blur(22px) saturate(.8)", opacity: 0.4, transform: "scale(1.5)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.7)" }} />
         </div>
         <div
           className="relative z-10 w-full overflow-hidden"
-          style={{ height: "clamp(470px, 64svh, 600px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b" }}
+          style={{ height: "clamp(470px, 64svh, 600px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)", maskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)" }}
         >
           <LiveScene modelScale={0.8} />
           <div className="absolute inset-0 z-[2] pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 62%, rgba(8,12,14,.88) 100%)" }} />
+            style={{ background: "linear-gradient(180deg, rgba(8,12,14,.8) 0%, rgba(8,12,14,.35) 24%, rgba(8,12,14,0) 40%, rgba(8,12,14,0) 62%, rgba(8,12,14,0) 100%)" }} />
           <div className="relative z-10 px-[20px] pt-[26px]">
             <TopBar />
           </div>
