@@ -166,6 +166,14 @@ function Cta({ desktop }) {
 }
 
 
+const DESK_CSS = `
+.desk{--z:1;zoom:var(--z);height:calc(100dvh / var(--z))}
+@media (max-height:699px){.desk{--z:.9}}
+@media (max-height:639px){.desk{--z:.82}}
+@media (max-height:579px){.desk{--z:.74}}
+@media (max-height:519px){.desk{--z:.66}}
+`;
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-[#e1e1e1]">
@@ -190,7 +198,8 @@ export default function Home() {
       </div>
 
       {/* Desktop: original forest scene full-viewport (like /wizard), layout on top */}
-      <div className="hidden lg:block relative min-h-screen overflow-hidden bg-[#1b1b1b]">
+      <div className="hidden lg:block relative overflow-hidden bg-[#1b1b1b]" style={{ height: "100vh" }}>
+        <style>{DESK_CSS}</style>
         <div
           className="absolute inset-0"
           style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.8 }}
@@ -201,7 +210,7 @@ export default function Home() {
             background:
               "linear-gradient(90deg, rgba(8,12,14,.78) 0%, rgba(8,12,14,.55) 28%, rgba(8,12,14,0) 44%, rgba(8,12,14,0) 62%, rgba(8,12,14,.6) 100%)",
           }} />
-        <div className="relative z-10 mx-auto w-[1280px] max-w-full h-screen min-h-[720px]">
+        <div className="desk relative z-10 mx-auto w-[1280px] max-w-full">
           <div className="absolute left-14 right-14 top-[34px]">
             <TopBar />
           </div>
