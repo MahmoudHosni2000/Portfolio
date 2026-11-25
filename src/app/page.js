@@ -36,39 +36,56 @@ const projects = [
 
 const chips = ["React", "Next.js", "TypeScript", "Tailwind", "C#", "ASP.NET Core", "SQL Server", "Three.js"];
 
-const icons = [
+const navLinks = [
   { label: "About", href: "/about" },
   { label: "Work", href: "/projects" },
   { label: "Contact", href: "/contact" },
-  { label: "in", href: "https://www.linkedin.com/in/mahmoudhosni2000/", ext: true },
-  { label: "GH", href: "https://github.com/MahmoudHosni2000", ext: true },
+];
+
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+  </svg>
+);
+
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+  </svg>
+);
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mahmoudhosni2000/", Icon: LinkedInIcon },
+  { label: "GitHub", href: "https://github.com/MahmoudHosni2000", Icon: GitHubIcon },
 ];
 
 const line = "1px solid rgba(200,180,60,.45)";
 
 function TopBar() {
   return (
-    <div className="flex items-center justify-between gap-2.5 w-full">
-      <span className="text-[13px] lg:text-[15px] tracking-[2px] uppercase text-[#d8b93c] leading-tight">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 w-full">
+      <span className="text-[13px] lg:text-[15px] tracking-[3px] uppercase text-[#d8b93c] leading-tight">
         Mahmoud Hosny
       </span>
-      <div className="flex gap-2 lg:gap-3">
-        {icons.map((i) =>
-          i.ext ? (
-            <a key={i.label} href={i.href} target="_blank" rel="noopener noreferrer"
-              className="w-9 h-9 lg:w-11 lg:h-11 rounded-full flex items-center justify-center text-[11px] lg:text-[13px] text-[#e1e1e1] bg-[rgba(27,27,27,.55)]"
-              style={{ border: line }}>
-              {i.label}
-            </a>
-          ) : (
-            <Link key={i.label} href={i.href}
-              className="w-9 h-9 lg:w-11 lg:h-11 rounded-full flex items-center justify-center text-[11px] lg:text-[13px] text-[#e1e1e1] bg-[rgba(27,27,27,.55)]"
-              style={{ border: line }}>
-              {i.label}
-            </Link>
-          )
-        )}
-      </div>
+      <nav
+        aria-label="Main"
+        className="flex items-center justify-between lg:justify-start gap-1 lg:gap-2 rounded-full px-2 lg:px-3 py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
+        style={{ border: "1px solid rgba(216,185,60,.28)", boxShadow: "0 4px 24px rgba(0,0,0,.35)" }}
+      >
+        {navLinks.map((l) => (
+          <Link key={l.label} href={l.href}
+            className="px-3 lg:px-4 py-1.5 rounded-full text-[13px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
+            {l.label}
+          </Link>
+        ))}
+        <span className="w-px h-5 mx-1 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
+        {socials.map(({ label, href, Icon }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+            className="w-8 h-8 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
+            <Icon />
+          </a>
+        ))}
+      </nav>
     </div>
   );
 }
