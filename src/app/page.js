@@ -66,20 +66,20 @@ function TopBar() {
       </span>
       <nav
         aria-label="Main"
-        className="flex items-center justify-center lg:justify-start gap-1 rounded-full px-4 lg:px-3 py-2.5 lg:py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
+        className="flex flex-wrap items-center justify-center lg:justify-start gap-x-0.5 gap-y-1 rounded-[22px] lg:rounded-full max-w-full min-w-0 px-2.5 lg:px-3 py-2 lg:py-1.5 backdrop-blur-md bg-[rgba(10,14,16,.55)] self-stretch lg:self-auto"
         style={{ border: "1px solid rgba(216,185,60,.28)", boxShadow: "0 4px 24px rgba(0,0,0,.35)" }}
       >
         {navLinks.map((l) => (
           <Link key={l.label} href={l.href}
-            className="px-2 lg:px-2.5 py-1.5 rounded-full text-[13px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
+            className="px-1.5 lg:px-2.5 py-1.5 rounded-full text-[12.5px] lg:text-[14px] tracking-[.5px] text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] transition-colors">
             {l.label}
           </Link>
         ))}
         <span className="hidden lg:block w-px h-5 mx-1.5 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 lg:gap-1">
         {socials.map(({ label, href, Icon }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-              className="group relative w-8 h-8 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
+              className="group relative w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-[#e1e1e1] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors">
               <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
               <span className="pointer-events-none absolute top-full mt-2 right-0 hidden group-hover:block group-focus:block px-2 py-1 rounded-md text-[12px] whitespace-nowrap text-[#e1e1e1] bg-[rgba(10,14,16,.92)] shadow-lg"
                 style={{ border: "1px solid rgba(216,185,60,.3)" }}>
@@ -149,16 +149,16 @@ function Projects({ desktop }) {
       <h2 className="text-[13px] tracking-[2px] uppercase text-[#d8b93c] mb-3 font-semibold">Featured projects</h2>
       {projects.map((p) => (
         <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"
-          className="flex gap-3.5 p-3 mb-3 rounded-sm bg-[rgba(20,24,26,.72)] backdrop-blur-[3px] hover:bg-[rgba(20,24,26,.9)] transition-colors"
+          className="flex max-[400px]:flex-col gap-3.5 p-3 mb-3 rounded-sm overflow-hidden bg-[rgba(20,24,26,.72)] backdrop-blur-[3px] hover:bg-[rgba(20,24,26,.9)] transition-colors"
           style={{ border: line }}>
           {p.img ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={p.img} alt={`${p.name} preview`} width={112} height={63} loading="lazy"
-              className="w-[112px] h-[63px] flex-none rounded-sm object-cover object-top" style={{ border: line }} />
+              className="w-[112px] h-[63px] max-[400px]:w-full max-[400px]:h-auto max-[400px]:aspect-video flex-none rounded-sm object-cover object-top" style={{ border: line }} />
           ) : (
             <div className="w-[92px] h-16 flex-none rounded-sm" style={{ background: p.grad, border: line }} />
           )}
-          <div>
+          <div className="min-w-0 flex-1 [overflow-wrap:anywhere]">
             <h3 className="text-[15px] mb-0.5">
               {p.name}
               {p.badge && (
@@ -172,7 +172,7 @@ function Projects({ desktop }) {
             {p.demo && (
               <div className="mt-2 px-2 py-1.5 rounded-sm text-[11px] leading-[1.5] text-[#e1e1e1] bg-[rgba(216,185,60,.08)]" style={{ border: "1px dashed rgba(216,185,60,.45)" }}>
                 <span className="text-[#d8b93c] tracking-[1px] uppercase text-[10px] block">Demo login · try it live</span>
-                <span className="text-[#a9aeb0]">Email: </span><br /><span className="whitespace-nowrap text-[10.5px] select-all">{p.demo.email}</span>
+                <span className="text-[#a9aeb0]">Email: </span><br /><span className="text-[10.5px] select-all [overflow-wrap:anywhere]">{p.demo.email}</span>
                 <br />
                 <span className="text-[#a9aeb0]">Password: </span><span className="select-all">{p.demo.pass}</span>
               </div>
@@ -209,7 +209,7 @@ const DESK_CSS = `
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-[#e1e1e1]">
+    <main className="min-h-screen bg-[#1b1b1b] text-[#e1e1e1] overflow-x-hidden">
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden relative flex flex-col min-h-screen">
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
