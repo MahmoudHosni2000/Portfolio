@@ -67,6 +67,7 @@ function TopBar() {
             {l.label}
           </Link>
         ))}
+        <span className="hidden lg:block w-px h-5 mx-1.5 bg-[rgba(216,185,60,.3)]" aria-hidden="true" />
         <div className="flex items-center gap-1">
         {socials.map(({ label, href, Icon }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
