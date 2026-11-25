@@ -11,28 +11,32 @@ export default function AboutDetails() {
                     <h2 className="text-xl md:text-2xl text-left w-full capitalize">
                         Architect of Enchantment
                     </h2>
-                    <p className="font-light text-xs sm:text-sm md:text-base">
-                        My journey in web development is powered by an array of mystical
-                        tools and languages, with JavaScript casting the core of my
-                        enchantments. I wield frameworks like React.js and Next.js with
-                        precision, crafting seamless portals (websites) that connect realms
-                        (users) across the digital universe. The ancient arts of the
-                        Jamstack empower me to create fast, secure, and dynamic experiences,
-                        while my design skills ensure every creation is not only functional
-                        but visually captivating. Join me as I continue to explore new
-                        spells and technologies to shape the future of the web.
+                    <p className="font-light text-sm sm:text-base leading-relaxed">
+                        I&apos;m a Cairo-based full-stack developer who builds fast React and
+                        Next.js front ends and the ASP.NET Core APIs behind them. I&apos;ve shipped
+                        real apps, including a clinic management platform, an ordering API with
+                        JWT, Redis and Stripe, and an e-commerce API. A little wizardry helps: I
+                        keep things quick, tidy and easy to use. I&apos;m open to remote or
+                        relocation, so if you have a spell that needs casting, get in touch.
                     </p>
                 </ItemLayout>
-                <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent'} >
-                    <p className='font-semibold w-full text-left text-2xl sm:text-5xl'>
-                        1½ <sub className='font-semibold text-base'>years of experience</sub>
-                    </p>
+                <ItemLayout className={'col-span-full xs:col-span-6 lg:col-span-4 row-span-2 text-accent flex-col !space-y-2 text-center'} >
+                    <p className='font-bold leading-none text-6xl sm:text-7xl'>2+</p>
+                    <p className='font-semibold text-base sm:text-lg leading-snug max-w-[20rem] text-balance'>years building production apps</p>
                 </ItemLayout>
                 <ItemLayout className={"col-span-full"}>
                     <Image
                         unoptimized
-                        className="w-full h-auto"
+                        className="hidden sm:block w-full h-auto"
                         src="https://skillicons.dev/icons?i=c,cpp,cs,js,typescript,html,css,sass,bootstrap,tailwind,react,redux,threejs,nextjs,nodejs,npm,dotnet,prisma,supabase,firebase,postman,gulp,git,github,vercel,netlify,ai,vscode,arduino"
+                        alt="Skills icons"
+                        width={800}
+                        height={500}
+                    />
+                    <Image
+                        unoptimized
+                        className="sm:hidden w-full max-w-[340px] mx-auto h-auto"
+                        src="https://skillicons.dev/icons?i=c,cpp,cs,js,typescript,html,css,sass,bootstrap,tailwind,react,redux,threejs,nextjs,nodejs,npm,dotnet,prisma,supabase,firebase,postman,gulp,git,github,vercel,netlify,ai,vscode,arduino&perline=8"
                         alt="Skills icons"
                         width={800}
                         height={500}
