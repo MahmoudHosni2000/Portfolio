@@ -206,13 +206,13 @@ export default function Home() {
         </div>
         <div className="relative z-10 px-[20px] pt-[26px]">
           <TopBar />
-          <div className="mt-1"><Info part="head" /></div>
+          <div className="mt-4"><Info part="head" /></div>
         </div>
         <div
           className="relative z-10 w-full overflow-hidden -mt-2"
-          style={{ height: "clamp(380px, 50svh, 480px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
+          style={{ height: "clamp(430px, 56svh, 520px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
         >
-          <LiveScene modelScale={1.0001} />
+          <LiveScene modelScale={1.2} />
         </div>
         <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
           <Info part="body" />
