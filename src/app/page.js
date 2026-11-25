@@ -118,14 +118,17 @@ function Info({ desktop, part }) {
           style={{ border: "1px solid #d8b93c" }}>
           Download CV
         </a>
-        <a href="https://github.com/MahmoudHosni2000" target="_blank" rel="noopener noreferrer"
-          className="px-[18px] lg:px-[22px] py-[11px] lg:py-3 text-[14px] lg:text-[14.5px] rounded-sm bg-[rgba(27,27,27,.6)]" style={{ border: line }}>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/mahmoudhosni2000/" target="_blank" rel="noopener noreferrer"
-          className="px-[18px] lg:px-[22px] py-[11px] lg:py-3 text-[14px] lg:text-[14.5px] rounded-sm bg-[rgba(27,27,27,.6)]" style={{ border: line }}>
-          LinkedIn
-        </a>
+        {[...socials].reverse().map(({ label, href, Icon }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+            className="group relative w-[44px] h-[44px] lg:w-[46px] lg:h-[46px] rounded-sm flex items-center justify-center text-[#e1e1e1] bg-[rgba(27,27,27,.6)] hover:text-[#f0d36a] hover:bg-[rgba(216,185,60,.12)] focus:text-[#f0d36a] transition-colors"
+            style={{ border: line }}>
+            <Icon className="w-[20px] h-[20px]" strokeWidth={1.6} />
+            <span className="pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:block group-focus:block px-2 py-1 rounded-md text-[12px] whitespace-nowrap text-[#e1e1e1] bg-[rgba(10,14,16,.92)] shadow-lg"
+              style={{ border: "1px solid rgba(216,185,60,.3)" }}>
+              {label}
+            </span>
+          </a>
+        ))}
       </div>
       </>)}
     </div>
