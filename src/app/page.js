@@ -209,15 +209,18 @@ export default function Home() {
           <div className="mt-4"><Info part="head" /></div>
         </div>
         <div
-          className="w-full overflow-hidden -mt-2"
+          className="relative w-full overflow-hidden -mt-2"
           style={{ height: "clamp(430px, 56svh, 520px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
         >
           <LiveScene modelScale={1.2} />
         </div>
         <div className="pointer-events-none h-16 -mb-16" aria-hidden="true" style={{ background: "linear-gradient(to bottom, #1b1b1b 0%, rgba(27,27,27,0) 100%)" }} />
-        </div>
-        <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
+        <div className="px-[18px] pt-0 pb-4 -mt-6 relative z-10">
           <Info part="body" />
+        </div>
+        </div>
+        <div className="pointer-events-none relative z-10 h-12" aria-hidden="true" style={{ background: "linear-gradient(to bottom, #1b1b1b 0%, rgba(27,27,27,0) 100%)" }} />
+        <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
           <Projects />
         </div>
       </div>
@@ -250,3 +253,4 @@ export default function Home() {
     </main>
   );
 }
+
