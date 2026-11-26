@@ -187,8 +187,8 @@ export default function Home() {
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden relative flex flex-col min-h-screen">
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/background/2-forest-mobile-bg.jpg)", backgroundSize: "cover", backgroundPosition: "bottom center", backgroundRepeat: "no-repeat", opacity: 0.75 }} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(8,12,14,.55) 0%, rgba(8,12,14,.45) 45%, rgba(8,12,14,.65) 100%)" }} />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/background/2-forest-mobile-bg.jpg)", backgroundSize: "cover", backgroundPosition: "bottom center", backgroundRepeat: "no-repeat", opacity: 1 }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(8,12,14,.62) 0%, rgba(8,12,14,.5) 45%, rgba(8,12,14,.7) 100%)" }} />
           <style>{`
 .amb-mist{position:absolute;left:-30%;width:160%;height:45%;border-radius:50%;filter:blur(40px);will-change:transform;opacity:.0}
 .amb-mist.a{bottom:-8%;background:radial-gradient(ellipse at center,rgba(120,170,160,.16),transparent 65%);animation:ambMistA 38s ease-in-out infinite alternate;opacity:1}
@@ -203,23 +203,21 @@ export default function Home() {
           <div className="amb-mist b" />
           <i className="amb-fly" style={{ left: "44%", top: "27%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "71%", top: "20%", width: 3, height: 3, animationDelay: "-5s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "7%", top: "19%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "33%", top: "19%", width: 2, height: 2, animationDelay: "-8s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "75%", top: "23%", width: 4, height: 4, animationDelay: "-3s", animationDuration: "8s" }} /><i className="amb-fly" style={{ left: "9%", top: "36%", width: 3, height: 3, animationDelay: "-0s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "56%", top: "26%", width: 3, height: 3, animationDelay: "-8s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "74%", top: "95%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "50%", top: "20%", width: 2, height: 2, animationDelay: "-8s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "82%", top: "34%", width: 3, height: 3, animationDelay: "-7s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "62%", top: "82%", width: 3, height: 3, animationDelay: "-14s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "41%", top: "39%", width: 3, height: 3, animationDelay: "-12s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "13%", top: "81%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "96%", top: "65%", width: 2, height: 2, animationDelay: "-4s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "68%", top: "61%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "65%", top: "61%", width: 3, height: 3, animationDelay: "-0s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "46%", top: "96%", width: 4, height: 4, animationDelay: "-5s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "11%", top: "19%", width: 2, height: 2, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "10%", top: "97%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "94%", top: "57%", width: 2, height: 2, animationDelay: "-14s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "62%", top: "53%", width: 4, height: 4, animationDelay: "-2s", animationDuration: "9s" }} /><i className="amb-fly" style={{ left: "10%", top: "35%", width: 3, height: 3, animationDelay: "-12s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "34%", top: "58%", width: 2, height: 2, animationDelay: "-6s", animationDuration: "15s" }} /><i className="amb-fly" style={{ left: "24%", top: "65%", width: 3, height: 3, animationDelay: "-6s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "58%", top: "78%", width: 3, height: 3, animationDelay: "-4s", animationDuration: "14s" }} /><i className="amb-fly" style={{ left: "90%", top: "56%", width: 2, height: 2, animationDelay: "-3s", animationDuration: "10s" }} /><i className="amb-fly" style={{ left: "25%", top: "27%", width: 2, height: 2, animationDelay: "-3s", animationDuration: "11s" }} /><i className="amb-fly" style={{ left: "65%", top: "83%", width: 3, height: 3, animationDelay: "-2s", animationDuration: "12s" }} /><i className="amb-fly" style={{ left: "3%", top: "26%", width: 3, height: 3, animationDelay: "-6s", animationDuration: "13s" }} /><i className="amb-fly" style={{ left: "19%", top: "96%", width: 4, height: 4, animationDelay: "-13s", animationDuration: "8s" }} />
         </div>
-        <div className="relative z-10" style={{ backgroundColor: "#1b1b1b" }}>
+        <div className="relative z-10">
         <div className="px-[20px] pt-[26px]">
           <TopBar />
           <div className="mt-4"><Info part="head" /></div>
         </div>
         <div
           className="relative w-full overflow-hidden -mt-2"
-          style={{ height: "clamp(430px, 56svh, 520px)", backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundColor: "#1b1b1b", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
+          style={{ height: "clamp(430px, 56svh, 520px)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 74%, transparent 100%)" }}
         >
           <LiveScene modelScale={1.2} />
         </div>
-        <div className="pointer-events-none h-16 -mb-16" aria-hidden="true" style={{ background: "linear-gradient(to bottom, #1b1b1b 0%, rgba(27,27,27,0) 100%)" }} />
         <div className="px-[18px] pt-0 pb-4 -mt-6 relative z-10">
           <Info part="body" />
         </div>
         </div>
-        <div className="pointer-events-none relative z-10 h-12" aria-hidden="true" style={{ background: "linear-gradient(to bottom, #1b1b1b 0%, rgba(27,27,27,0) 100%)" }} />
         <div className="flex flex-col gap-6 px-[18px] pt-0 pb-8 -mt-6 relative z-10">
           <Projects />
         </div>
