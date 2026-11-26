@@ -187,8 +187,8 @@ export default function Home() {
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden relative flex flex-col min-h-screen">
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -inset-10" style={{ backgroundImage: bgUrl, backgroundSize: "cover", backgroundPosition: "30% 80%", filter: "blur(22px) saturate(.8)", opacity: 0.4, transform: "scale(1.5)" }} />
-          <div className="absolute inset-0" style={{ background: "rgba(8,12,14,.7)" }} />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/background/2-forest-mobile-bg.jpg)", backgroundSize: "cover", backgroundPosition: "bottom center", backgroundRepeat: "no-repeat", opacity: 0.75 }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(8,12,14,.55) 0%, rgba(8,12,14,.45) 45%, rgba(8,12,14,.65) 100%)" }} />
           <style>{`
 .amb-mist{position:absolute;left:-30%;width:160%;height:45%;border-radius:50%;filter:blur(40px);will-change:transform;opacity:.0}
 .amb-mist.a{bottom:-8%;background:radial-gradient(ellipse at center,rgba(120,170,160,.16),transparent 65%);animation:ambMistA 38s ease-in-out infinite alternate;opacity:1}
