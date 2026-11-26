@@ -186,7 +186,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#1b1b1b] text-[#e1e1e1] overflow-x-hidden">
       {/* Mobile: wizard scene banner, then stacked info layer */}
       <div className="lg:hidden relative flex flex-col min-h-screen">
-        <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+        <div className="fixed left-0 top-0 w-full h-screen z-0 pointer-events-none" style={{ height: "100lvh" }} aria-hidden="true">
           <div className="absolute inset-0" style={{ backgroundImage: "url(/background/2-forest-mobile-bg.jpg)", backgroundSize: "cover", backgroundPosition: "bottom center", backgroundRepeat: "no-repeat", opacity: 1 }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(8,12,14,.62) 0%, rgba(8,12,14,.5) 45%, rgba(8,12,14,.7) 100%)" }} />
           <style>{`
