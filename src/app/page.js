@@ -135,7 +135,7 @@ function Info({ desktop, part }) {
 function Projects({ desktop }) {
   return (
     <div className={desktop ? "w-[372px]" : "w-full"}>
-      <h2 className="text-[13px] tracking-[2px] uppercase text-[#d8b93c] mb-3 font-semibold">Featured projects</h2>
+      <h2 className="text-[13px] tracking-[2px] uppercase text-[#d8b93c] mb-3 font-semibold mt-7 lg:mt-0">Featured projects</h2>
       {projects.map((p) => (
         <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"
           className="flex max-[400px]:flex-col gap-3.5 p-3 mb-3 rounded-sm overflow-hidden bg-[rgba(20,24,26,.72)] backdrop-blur-[3px] hover:bg-[rgba(20,24,26,.9)] transition-colors"
@@ -251,4 +251,3 @@ export default function Home() {
     </main>
   );
 }
-
